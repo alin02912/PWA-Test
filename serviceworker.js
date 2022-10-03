@@ -1,3 +1,4 @@
+console.log("Service Worker Init")
 const urlsToCache = ["/", "style.css", "script.js"];
 self.addEventListener("install", event => {
     console.log("Install event triggered");
