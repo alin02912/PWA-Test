@@ -13,7 +13,11 @@ self.addEventListener("fetch", event => {
     console.log("Fetch ran!");
     event.respondWith(
         caches.match(event.request).then(
-            cacheResponse => cacheResponse || fetch(event.request)
+
+            cacheResponse => {
+                console.log("match found");
+                return cacheResponse || fetch(event.request)
+            }
         )
     )
     console.log("Fetch finished running");
