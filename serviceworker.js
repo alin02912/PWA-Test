@@ -10,7 +10,7 @@ self.addEventListener("install", event => {
     console.log("Install event about to finish");
 });
 self.addEventListener("fetch", event => {
-    console.log("Fetch ran!");
+    console.log("Fetch ran!", event.request);
     event.respondWith(
         caches.match(event.request).then(
             cacheResponse => {
