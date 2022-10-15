@@ -14,4 +14,4 @@ self.addEventListener("fetch", event => {
         )
     )
 });
-self.addEventListener("activate", ()=> console.log("SW Activated!"))
+self.addEventListener("activate", () => console.log("SW Activated!"))
