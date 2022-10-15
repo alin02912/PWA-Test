@@ -1,9 +1,11 @@
 console.log("Service Worker Init")
-const urlsToCache = ["/", "style.css", "script.js"];
+const urlsToCache = ["index.html", "style.css", "script.js"];
 self.addEventListener("install", event => {
     console.log("Install event triggered");
-    event.waitUntil(caches.open("pwa-assets").then(
-        cache => cache.addAll(urlsToCache)
+    event.waitUntil(caches.open("pwa-assets")
+    .then(cache => {
+       return cache.addAll(urlsToCache);
+    }
     ));
     console.log("Install event about to finish");
 });
